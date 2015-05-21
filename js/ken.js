@@ -1,6 +1,7 @@
 var $ken = $('.ken'),
     $guile = $('.guile'),
     $kenPos, $guilePos, $fireballPos;
+    
 
 var isCollision = function(){ 
     return false;
