@@ -213,14 +213,14 @@ body { background-color: black; margin: 0; overflow: auto;}
 @-webkit-keyframes stance2 { from { background-position: 0px 0px;  }
   to { background-position: -200px 0px;  } }
 
-@-moz-keyframes stance2 { from {  }
-  to {  } }
+@-moz-keyframes stance2 { from { background-position: 0px 0px;  }
+  to { background-position: -200px 0px;  } }
 
-@-ms-keyframes stance2 { from {  }
-  to {  } }
+@-ms-keyframes stance2 { from { background-position: 0px 0px;  }
+  to { background-position: -200px 0px;  } }
 
-@keyframes stance2 { from {  }
-  to {  } }
+@keyframes stance2 { from { background-position: 0px 0px;  }
+  to { background-position: -200px 0px;  } }
 
 /* hit1 */
 .hit1 { background-image: url(../images/guile-hit.png);
@@ -229,14 +229,14 @@ body { background-color: black; margin: 0; overflow: auto;}
 @-webkit-keyframes hit1 { from { background-position: 0px 0px;  }
   to { background-position: -200px 0px; } }
 
-@-moz-keyframes hit1 { from {  }
-  to {  } }
+@-moz-keyframes hit1 { from { background-position: 0px 0px;  }
+  to { background-position: -200px 0px; } }
 
-@-ms-keyframes hit1 { from {  }
-  to {  } }
+@-ms-keyframes hit1 { from { background-position: 0px 0px;  }
+  to { background-position: -200px 0px; } }
 
-@keyframes hit1 { from {  }
-  to {  } }
+@keyframes hit1 { from { background-position: 0px 0px;  }
+  to { background-position: -200px 0px; } }
 
 /* hit2 */
 .hit2 { background-image: url(../images/guile-hit.png);
@@ -245,14 +245,14 @@ body { background-color: black; margin: 0; overflow: auto;}
 @-webkit-keyframes hit2 { from { background-position: 0px -90px; }
   to { background-position: -190px -90px; } }
 
-@-moz-keyframes hit2 { from {  }
-  to {  } }
+@-moz-keyframes hit2 { from { background-position: 0px -90px; }
+  to { background-position: -190px -90px; } }
 
-@-ms-keyframes hit2 { from {  }
-  to {  } }
-
-@keyframes hit2 { from {  }
-  to {  } }
+@-ms-keyframes hit2 { from { background-position: 0px -90px; }
+  to { background-position: -190px -90px; } }
+  
+@keyframes hit2 { from { background-position: 0px -90px; }
+  to { background-position: -190px -90px; } }
 
 /* hit3 */
 .hit3 { background-image: url(../images/guile-hit.png);
@@ -261,11 +261,11 @@ body { background-color: black; margin: 0; overflow: auto;}
 @-webkit-keyframes hit3 { from { background-position: 0px -180px; }
   to { background-position: -0px -180px; } }
 
-@-moz-keyframes hit3 { from {  }
-  to {  } }
+@-moz-keyframes hit3 { from { background-position: 0px -180px; }
+  to { background-position: -0px -180px;  } }
 
-@-ms-keyframes hit3 { from {  }
-  to {  } }
+@-ms-keyframes hit3 { from { background-position: 0px -180px; }
+  to { background-position: -0px -180px;  } }
 
-@keyframes hit3 { from {  }
-  to {  } }
+@keyframes hit3 { from { background-position: 0px -180px; }
+  to { background-position: -0px -180px; } }
