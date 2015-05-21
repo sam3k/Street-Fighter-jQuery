@@ -88,6 +88,27 @@ var walkRight = function(){
     $ken.addClass('walk').css({ marginLeft:'+=10px' });
 };
 
+var guilehit1 = function(){
+    $guile.addClass('hit1');
+    setTimeout(function(){
+       $guile.removeClass('hit1'); 
+    }, 400 );
+};
+
+var guilehit2 = function(){
+    $guile.addClass('hit2');
+     setTimeout(function(){
+       $guile.removeClass('hit2'); 
+    }, 400 );
+};
+
+var guilehit3 = function(){
+    $guile.addClass('hit3');
+     setTimeout(function(){
+       $guile.removeClass('hit3'); 
+    }, 400 );
+};
+
 
 // on click events
 // -----------------------------------
@@ -220,6 +241,9 @@ $(document).on('keydown keyup', function(e) {
         // ←← →→ walking
         if (e.keyCode == 37) { walkLeft(); }
         if (e.keyCode == 39) { walkRight(); }
+        if (e.keyCode == 75) { guilehit1(); }
+        if (e.keyCode == 76) { guilehit2(); } 
+        if (e.keyCode == 79) { guilehit3(); } 
     }
     else { // keyup
         $ken.removeClass('walk kneel');
@@ -227,5 +251,7 @@ $(document).on('keydown keyup', function(e) {
 
     console.log(e.keyCode);
 
+ 
     //return false;
 });
+
