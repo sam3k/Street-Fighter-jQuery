@@ -2,7 +2,20 @@ var $ken = $('.ken'),
     $guile = $('.guile'),
     $kenPos, $guilePos, $fireballPos;
 
-var isCollision = function(){ 
+var isCollision = function(){
+    console.log("Ken", $ken.position());
+    console.log("Guile", $guile.position());
+    
+    var ken_left = $ken.position().left;
+    var guile_left = $guile.position().left;
+            console.log(guile_left - ken_left)
+    if (
+        (guile_left - ken_left <= 40) && (guile_left - ken_left >= -40)
+        )
+    {
+
+        return true;
+    }    
     return false;
 };
 
@@ -12,22 +25,29 @@ var isCollision = function(){
 var punch = function(){
     $ken.addClass('punch'); 
     if (isCollision()) { 
+        $guile.addClass('hit1');
     }
-    setTimeout(function() { $ken.removeClass('punch'); }, 150);
+    setTimeout(function() { 
+        $ken.removeClass('punch'); 
+        $guile.removeClass('hit1');
+    }, 150);
 };
 var kick = function(){
+    $ken.addClass('kick');
     if (isCollision()) { 
+        
     }
     setTimeout(function() { $ken.removeClass('kick'); }, 500);
 };
 var rkick = function(){
     $ken.addClass('reversekick');
     if (isCollision()) { 
+        
     }
     setTimeout(function() { $ken.removeClass('reversekick'); }, 500); 
 };
 var tatsumaki = function(){
-    soundManager.play('tatsumaki');
+    //soundManager.play('tatsumaki');
     $ken.addClass('tatsumaki');
     if (isCollision()) { 
     }
@@ -68,6 +88,7 @@ var hadoken = function(){
 };
 var shoryuken = function(){
     if (isCollision()) { 
+        
     }
     $ken.addClass('shoryuken');
     setTimeout(function() { $ken.addClass('down'); }, 500); 
@@ -82,10 +103,10 @@ var kneel = function(){
     $ken.addClass('kneel');
 };
 var walkLeft = function(){
-    $ken.addClass('walk').css({ marginLeft:'-=10px' });
+    $ken.addClass('walk').css({ left:'-=10px' });
 };
 var walkRight = function(){
-    $ken.addClass('walk').css({ marginLeft:'+=10px' });
+    $ken.addClass('walk').css({ left:'+=10px' });
 };
 
 
@@ -225,7 +246,7 @@ $(document).on('keydown keyup', function(e) {
         $ken.removeClass('walk kneel');
     }
 
-    console.log(e.keyCode);
+    //console.log(e.keyCode);
 
     //return false;
 });
