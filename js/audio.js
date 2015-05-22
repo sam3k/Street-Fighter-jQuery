@@ -7,6 +7,7 @@ function playSoundTrack (){
     });
     mySound.play({volume: 100});
 }
+
 //load huhs audio
 function loadAudioHuhs (){
      soundManager.createSound({
@@ -25,6 +26,7 @@ function loadAudioHuhs (){
         
     });
 }
+
 //load audio swooshes
 function loadAudioSwooshes (){
      soundManager.createSound({
@@ -42,6 +44,8 @@ function loadAudioSwooshes (){
         url: "audio/swooshes/Swooshingsound.mp3"
         
     });
+}
+
 //load audio hits 
 function loadAudioHits(){
     soundManager.createSound({
@@ -84,6 +88,7 @@ function loadAudioHits(){
         url: "audio/hits/kung_fu_punch.mp3"
     });
 }
+
 //soundmanager setup for all audio
 soundManager.setup({
     url:'audio/soundmanager2.swf',
