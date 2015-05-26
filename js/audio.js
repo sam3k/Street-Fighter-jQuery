@@ -1,3 +1,12 @@
+function loopSound(sound) {
+    sound.play({
+        volume: 100,
+        onfinish: function() {
+            loopSound(sound);
+            console.log('finish soundtrack, looping');
+        }
+    });
+}
 //play soundtrack
 function playSoundTrack (){
     var mySound = soundManager.createSound({
@@ -5,7 +14,8 @@ function playSoundTrack (){
         url: "audio/music.mp3"
         
     });
-    mySound.play({volume: 100});
+ 
+    loopSound(mySound);
 }
 
 //load huhs audio
@@ -27,6 +37,29 @@ function loadAudioHuhs (){
     });
 }
 
+//load audio commentator
+function loadAudioCommentator (){
+    soundManager.createSound({
+        id: 'loose',
+        url: "audio/commentator/loose.wav"
+ 
+    });
+    soundManager.createSound({
+        id: 'perfect',
+        url: "audio/commentator/perfect.wav"
+        
+    });
+    soundManager.createSound({
+        id: 'win',
+        url: "audio/commentator/win.wav"
+        
+    });
+    soundManager.createSound({
+        id: 'you',
+        url: "audio/commentator/you.wav"
+        
+    });
+} 
 //load audio swooshes
 function loadAudioSwooshes (){
      soundManager.createSound({
@@ -45,7 +78,6 @@ function loadAudioSwooshes (){
         
     });
 }
-
 //load audio hits 
 function loadAudioHits(){
     soundManager.createSound({
@@ -88,7 +120,37 @@ function loadAudioHits(){
         url: "audio/hits/kung_fu_punch.mp3"
     });
 }
+function loadAudioHado (){
+     soundManager.createSound({
+        id: 'hado',
+        url: "audio/hado-shoryu_ken/hado.wav"
+        
+    });
+    soundManager.createSound({
+        id: 'ken',
+        url: "audio/hado-shoryu_ken/ken.wav"
+        
+    });
+    soundManager.createSound({
+        id: 'shoryu',
+        url: "audio/hado-shoryu_ken/shoryu.wav"
+        
+    });
+}
 
+//load audio crowd
+function loadAudioCrowd (){
+    soundManager.createSound({
+        id: 'crowd1',
+        url: "audio/crowd/1.wav"
+        
+    });
+    soundManager.createSound({
+        id: 'crowd2',
+        url: "audio/crowd/2.wav"
+        
+    });
+}
 //soundmanager setup for all audio
 soundManager.setup({
     url:'audio/soundmanager2.swf',
@@ -101,5 +163,12 @@ soundManager.onready(function() {
     loadAudioHuhs();
     loadAudioHits();
     loadAudioSwooshes();
-    
+    loadAudioHado();
+    loadAudioCommentator();
+    loadAudioCrowd();
+    randomCrowd();
 });
+
+function randomCrowd(){
+    //every 30 sec call crowd sound 
+}

@@ -25,8 +25,13 @@ var isCollision = function(){
 // ----------------------------------- \
 var punch = function(){
     $ken.addClass('punch'); 
+    
     if (isCollision()) { 
         $guile.addClass('hit1');
+        soundManager.play('hit1');
+    }
+    else{
+        soundManager.play('swoosh1');
     }
     setTimeout(function() { 
         $ken.removeClass('punch'); 
@@ -36,27 +41,50 @@ var punch = function(){
 var kick = function(){
     $ken.addClass('kick');
     if (isCollision()) { 
-        
+        $guile.addClass('hit1');
+        soundManager.play('hit1');
     }
-    setTimeout(function() { $ken.removeClass('kick'); }, 500);
+    else{
+        soundManager.play('swoosh3')
+    }
+    setTimeout(function() { 
+        $ken.removeClass('kick'); 
+        $guile.removeClass('hit1');
+    }, 500);
 };
 var rkick = function(){
     $ken.addClass('reversekick');
     if (isCollision()) { 
-        
+        $guile.addClass('hit1');
+        soundManager.play('hit1');
     }
-    setTimeout(function() { $ken.removeClass('reversekick'); }, 500); 
+    else{
+        soundManager.play('swoosh3');
+    }
+    setTimeout(function() { 
+        $ken.removeClass('reversekick');       
+        $guile.removeClass('hit1');
+    }, 500);
 };
 var tatsumaki = function(){
     //soundManager.play('tatsumaki');
     $ken.addClass('tatsumaki');
     if (isCollision()) { 
+        $guile.addClass('hit1');
+        soundManager.play('hit1');
+        setTimeout(function(){soundManager.play('hit1')},700)
+        setTimeout(function(){soundManager.play('hit1')},1400)
     }
-    setTimeout(function() { $ken.addClass('down'); }, 1500); 
+    else{
+        soundManager.play('swoosh3');
+    }
+    setTimeout(function() { $ken.addClass('down'); $guile.removeClass('hit1');}, 1500); 
     setTimeout(function() { $ken.removeClass('tatsumaki down'); }, 2000);
 };
 var hadoken = function(){
+    soundManager.play('hado');
     $ken.addClass('hadoken'); 
+    $guile.addClass('hit1');
     setTimeout(function() { $ken.removeClass('hadoken'); }, 500); 
     setTimeout(function() {
         // 1
@@ -82,12 +110,14 @@ var hadoken = function(){
         //3
         setTimeout(function() { 
             $fireball.remove(); 
+            $guile.removeClass('hit1');
             clearInterval(explodeIfCollision);
         }, 3020);
 
     }, (250));
 };
 var shoryuken = function(){
+    soundManager.play('shoryu');
     if (isCollision()) { 
         
     }
@@ -130,7 +160,6 @@ var guilehit3 = function(){
        $guile.removeClass('hit3'); 
     }, 400 );
 };
-
 
 // on click events
 // -----------------------------------
